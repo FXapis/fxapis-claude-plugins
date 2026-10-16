@@ -1,0 +1,14 @@
+{
+  "name": "fxapis",
+  "owner": { "name": "fxapis", "email": "support@fxapis.com", "url": "https://fxapis.com" },
+  "description": "fxapis for Claude Code: MetaTrader 5 accounts, positions and trading over MCP, with a safe-trading skill and a confirmation hook.",
+  "plugins": [
+    {
+      "name": "fxapis",
+      "source": "./plugins/fxapis",
+      "description": "Read and trade your MetaTrader 5 accounts through fxapis, with every trade confirmed.",
+      "category": "trading",
+      "tags": ["mt5", "metatrader", "trading", "forex", "mcp"]
+    }
+  ]
+}

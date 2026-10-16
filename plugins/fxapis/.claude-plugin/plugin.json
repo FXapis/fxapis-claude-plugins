@@ -1,0 +1,29 @@
+{
+  "name": "fxapis",
+  "displayName": "fxapis — MetaTrader 5",
+  "version": "1.0.0",
+  "description": "Your MetaTrader 5 accounts in Claude Code through fxapis: accounts, positions, prices and trading over MCP; a safe-trading skill; and a hook that has you confirm every trade and refuses live accounts unless you allow them.",
+  "author": { "name": "fxapis", "email": "support@fxapis.com", "url": "https://fxapis.com" },
+  "homepage": "https://docs.fxapis.com/guides/claude-plugin",
+  "repository": "https://github.com/FXapis/fxapis-claude-plugins",
+  "license": "MIT",
+  "keywords": ["mt5", "metatrader", "trading", "forex", "mcp"],
+  "documentationUrl": "https://docs.fxapis.com/guides/claude-plugin",
+  "supportUrl": "https://docs.fxapis.com/guides/mcp",
+  "privacyPolicyUrl": "https://fxapis.com/legal/privacy",
+  "termsOfServiceUrl": "https://fxapis.com/legal/terms",
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "fxapis API key (optional)",
+      "description": "Leave empty to sign in to fxapis in your browser on first use. Set an fx_live_… key only for agents that run unattended.",
+      "sensitive": true
+    },
+    "allowLiveTrading": {
+      "type": "boolean",
+      "title": "Allow trades on live accounts",
+      "description": "Off: trades on accounts fxapis reports as live are refused. Demo accounts trade, each after you confirm it.",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "fxapis": {
+      "type": "http",
+      "url": "https://api.fxapis.com/mcp",
+      "headers": { "X-API-Key": "${user_config.api_key}" }
+    }
+  }
+}

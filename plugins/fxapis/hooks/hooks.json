@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^mcp__(plugin_fxapis_)?fxapis__(place_market_order|place_pending_order|close_position|modify_position|cancel_order|place_multi_account_order|cancel_multi_account_order)$",
+        "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/confirm-trade.mjs\"", "timeout": 10 }]
+      }
+    ]
+  }
+}
