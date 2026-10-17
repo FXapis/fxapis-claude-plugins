@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" role="img" aria-labelledby="title desc">
+  <title id="title">fxapis for Claude Code</title>
+  <desc id="desc">Your MetaTrader 5 accounts in Claude Code over MCP, with every trade confirmed. MCP server, OAuth sign-in, safe-trading skill, confirmation hook.</desc>
+  <rect x="0.5" y="0.5" width="1279" height="379" rx="20" fill="#0d1013" stroke="#1f262e"/>
+  <g fill="none" stroke-width="56" stroke-linejoin="round" opacity="0.09" transform="translate(900 30) scale(5)">
+    <path d="M13 44H20L44 20H51" stroke="#22d3d6" stroke-width="8"/>
+    <path d="M13 20H20L44 44H51" stroke="#f7f9fa" stroke-width="8"/>
+  </g>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <g transform="translate(72 64)">
+      <rect width="64" height="64" rx="14" fill="#1b2128" stroke="#2d3640"/>
+      <g fill="none" stroke-width="8" stroke-linejoin="round">
+        <path d="M13 44H20L44 20H51" stroke="#22d3d6"/>
+        <path d="M13 20H20L44 44H51" stroke="#f7f9fa"/>
+      </g>
+    </g>
+    <text x="152" y="108" font-size="34" font-weight="600" letter-spacing="-0.5" fill="#f7f9fa">fxapis</text>
+    <text x="72" y="204" font-size="58" font-weight="700" letter-spacing="-1.5" fill="#f7f9fa">fxapis for Claude Code</text>
+    <text x="72" y="250" font-size="24" fill="#9aa6b2">Your MetaTrader 5 accounts over MCP, with every trade confirmed.</text>
+    <g transform="translate(72 284)"><rect width="168" height="40" rx="20" fill="#111418" stroke="#2d3640"/><circle cx="22" cy="20" r="5" fill="#22d3d6"/><text x="97" y="26.5" text-anchor="middle" font-size="18" font-weight="500" fill="#f7f9fa">MCP server</text></g>
+    <g transform="translate(252 284)"><rect width="194" height="40" rx="20" fill="#111418" stroke="#2d3640"/><circle cx="22" cy="20" r="5" fill="#22d3d6"/><text x="110" y="26.5" text-anchor="middle" font-size="18" font-weight="500" fill="#f7f9fa">OAuth sign-in</text></g>
+    <g transform="translate(458 284)"><rect width="234" height="40" rx="20" fill="#111418" stroke="#2d3640"/><circle cx="22" cy="20" r="5" fill="#22d3d6"/><text x="130" y="26.5" text-anchor="middle" font-size="18" font-weight="500" fill="#f7f9fa">Safe-trading skill</text></g>
+    <g transform="translate(704 284)"><rect width="236" height="40" rx="20" fill="#111418" stroke="#2d3640"/><circle cx="22" cy="20" r="5" fill="#22d3d6"/><text x="131" y="26.5" text-anchor="middle" font-size="18" font-weight="500" fill="#f7f9fa">Confirmation hook</text></g>
+  </g>
+</svg>
