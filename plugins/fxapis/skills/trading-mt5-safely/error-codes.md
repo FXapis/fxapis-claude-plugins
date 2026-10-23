@@ -22,6 +22,7 @@ Every fxapis tool error starts with its code, for example `ORDER_UNRESOLVED (HTT
 | `MISSING_SCOPE` | This connection is not allowed to do this. Do not look for a workaround: tell the user which scope is missing — for a key, they create one with it in the fxapis dashboard; for a sign-in, they reconnect fxapis and allow it. |
 | `MT5_UNAVAILABLE` | The account's terminal did not answer. Try again shortly. |
 | `NEEDS_OPERATOR` | The account needs a human first (wrong password, 2FA, certificate). Retrying will not help and repeated failed logins can lock the broker account. Tell the user. |
+| `NO_PRICE` | The broker has no current price for this symbol on this account, so nothing was sent. Do not retry now: check the symbol's trading hours with list_account_instruments, or whether this broker offers it, and tell the user. |
 | `NO_RUNTIME` | The account is offline. Call bring_accounts_online and poll get_account_status until `ready`. |
 | `ORDER_NOT_FOUND` | No such order in this workspace. Call list_orders to find the right id. |
 | `ORDER_REJECTED` | The broker refused the order; nothing was opened. `retryable` in details says whether the reason was transient. Tell the user the reason before trying again. |
