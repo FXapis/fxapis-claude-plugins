@@ -49,6 +49,7 @@ Every trading tool takes `idempotency_key`.
   - Poll `get_order` with the order id from the error details until `state` leaves `unknown`, then tell the user what happened.
 - `SEND_FAILED` means nothing reached the broker. Retrying with the **same** key is safe.
 - `ORDER_REJECTED` means the broker refused, and nothing was opened. Give the user the reason before trying anything else.
+- `NO_PRICE` means the broker had no price for the symbol (market closed, or not offered), so nothing was sent. Do not retry now; check its trading hours and tell the user.
 
 See [order-lifecycle.md](order-lifecycle.md) for every order state, and [error-codes.md](error-codes.md) for every error code and what to do.
 
