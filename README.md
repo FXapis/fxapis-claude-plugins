@@ -153,8 +153,10 @@ There is no one-click link that adds a plugin marketplace to Claude Code or a cu
 ### claude.ai and Claude Desktop
 
 1. Open **Customize → Connectors → Add custom connector**. On Team and Enterprise plans, an Owner adds it under **Organization settings → Connectors**.
-2. **Remote MCP server URL:** `https://api.fxapis.com/mcp`. Leave the OAuth client fields empty.
-3. Click **Connect** and sign in to fxapis in the window that opens.
+2. Give it a name and set the **Remote MCP server URL** to `https://api.fxapis.com/mcp`.
+3. **Authentication:** choose **Sign in now**.
+4. **OAuth client:** choose **Use Claude's published identity**. Nothing to set up.
+5. Click **Add**, then **Connect**, and sign in to fxapis in the window that opens.
 
 For the skill, download [trading-mt5-safely.zip](https://docs.fxapis.com/downloads/trading-mt5-safely.zip) and upload it under **Settings → Capabilities → Skills**. The hook and commands are Claude Code features and are not part of the connector. Full steps: [docs.fxapis.com/guides/claude-plugin](https://docs.fxapis.com/guides/claude-plugin).
 
