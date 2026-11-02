@@ -158,7 +158,7 @@ There is no one-click link that adds a plugin marketplace to Claude Code or a cu
 4. **OAuth client:** choose **Use Claude's published identity**. Nothing to set up.
 5. Click **Add**, then **Connect**, and sign in to fxapis in the window that opens.
 
-For the skill, download [trading-mt5-safely.zip](https://docs.fxapis.com/downloads/trading-mt5-safely.zip) and upload it under **Settings → Capabilities → Skills**. The hook and commands are Claude Code features and are not part of the connector. Full steps: [docs.fxapis.com/guides/claude-plugin](https://docs.fxapis.com/guides/claude-plugin).
+For the skill, download [trading-mt5-safely.zip](https://docs.fxapis.com/downloads/trading-mt5-safely.zip) and upload it under **Customize → Skills** (**+**, then **Create skill → Upload a skill**; skills need code execution, under **Settings → Capabilities**). The hook and commands are Claude Code features and are not part of the connector. Full steps: [docs.fxapis.com/guides/claude-plugin](https://docs.fxapis.com/guides/claude-plugin).
 
 ### Claude Code without the plugin
 
