@@ -32,10 +32,10 @@ test("the plugin declares its options strictly, and the MCP server uses only dec
   for (const [, ref] of JSON.stringify(mcp).matchAll(/\$\{user_config\.([A-Za-z0-9_]+)\}/g)) assert.ok(p.userConfig[ref], ref);
 });
 
-test("the hook covers exactly the seven trade tools, from the plugin's server or one added by hand", () => {
+test("the hook covers exactly the eight trade tools, from the plugin's server or one added by hand", () => {
   const hooks = json("plugins/fxapis/hooks/hooks.json").hooks.PreToolUse;
   const matcher = new RegExp(hooks[0].matcher);
-  for (const tool of ["place_market_order", "place_pending_order", "close_position", "modify_position", "cancel_order", "place_multi_account_order", "cancel_multi_account_order"]) {
+  for (const tool of ["place_market_order", "place_pending_order", "close_position", "modify_position", "cancel_order", "place_multi_account_order", "cancel_multi_account_order", "close_multi_account_order"]) {
     assert.ok(matcher.test(`mcp__plugin_fxapis_fxapis__${tool}`), tool);
     assert.ok(matcher.test(`mcp__fxapis__${tool}`), tool);
   }

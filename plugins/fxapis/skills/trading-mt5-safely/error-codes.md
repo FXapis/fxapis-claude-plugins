@@ -22,6 +22,7 @@ Every fxapis tool error starts with its code, for example `ORDER_UNRESOLVED (HTT
 | `MISSING_SCOPE` | This connection is not allowed to do this. Do not look for a workaround: tell the user which scope is missing — for a key, they create one with it in the fxapis dashboard; for a sign-in, they reconnect fxapis and allow it. |
 | `MT5_UNAVAILABLE` | The account's terminal did not answer. Try again shortly. |
 | `NEEDS_OPERATOR` | The account needs a human first (wrong password, 2FA, certificate). Retrying will not help and repeated failed logins can lock the broker account. Tell the user. |
+| `NOTHING_TO_RETRY` | No account of this multi-account order matches what was asked to retry. Read it with get_multi_account_order. |
 | `NO_PRICE` | The broker has no current price for this symbol on this account, so nothing was sent. Do not retry now: check the symbol's trading hours with list_account_instruments, or whether this broker offers it, and tell the user. |
 | `NO_RUNTIME` | The account is offline. Call bring_accounts_online and poll get_account_status until `ready`. |
 | `ORDER_NOT_FOUND` | No such order in this workspace. Call list_orders to find the right id. |
@@ -34,5 +35,6 @@ Every fxapis tool error starts with its code, for example `ORDER_UNRESOLVED (HTT
 | `SEND_FAILED` | Nothing reached the broker. It is safe to retry with the SAME idempotency_key; a retry with the same key can never place a second order. |
 | `TRADING_DISABLED` | Trading is switched off for this workspace or account. Do not retry; tell the user. |
 | `UNAUTHENTICATED` | The credential was refused. If fxapis was connected by signing in, ask the user to reconnect it in this app; if it uses an API key, ask them to check the key. |
-| `WAVE_ALREADY_RELEASING` | Orders have already gone out, so this multi-account order can no longer be cancelled. Follow it with get_multi_account_order. |
+| `WAVE_ALREADY_RELEASING` | Orders have already gone out, so this multi-account order can no longer be cancelled. Follow it with get_multi_account_order, then close its positions with close_multi_account_order if the user wants out. |
+| `WAVE_NOT_ENDED` | The multi-account order is still being prepared or sent. Follow it with get_multi_account_order until it is settled, then retry with the same idempotency_key. |
 | `WAVE_NOT_FOUND` | No such multi-account order. Call list_multi_account_orders to find the right id. |

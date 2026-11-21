@@ -27,7 +27,7 @@ Before calling any tool that trades, write one line and wait for an explicit yes
 
 > Buy **0.10 lots EURUSD** at market on **LIVE account 5012345 (ICMarketsSC-Live)**, stop loss 1.08000, take profit 1.09000. Go ahead?
 
-The tools that trade are `place_market_order`, `place_pending_order`, `close_position`, `modify_position`, `cancel_order`, `place_multi_account_order` and `cancel_multi_account_order`.
+The tools that trade are `place_market_order`, `place_pending_order`, `close_position`, `modify_position`, `cancel_order`, `place_multi_account_order`, `cancel_multi_account_order` and `close_multi_account_order`.
 
 - Confirm the account, the symbol (the broker's symbol: see `list_account_instruments`), the side and the volume.
 - Confirm stops and targets when given.

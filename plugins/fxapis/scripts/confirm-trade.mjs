@@ -33,6 +33,7 @@ export const TRADE_TOOLS = new Set([
   "cancel_order",
   "place_multi_account_order",
   "cancel_multi_account_order",
+  "close_multi_account_order",
 ]);
 
 /** fxapis's own account tools: the only ones environmentsFrom trusts for an account's environment. */
@@ -150,6 +151,8 @@ export function summarise(tool, input) {
       return `${input.side} ${input.volume} lots ${input.symbol ?? input.instrument} on ${where}`;
     case "cancel_multi_account_order":
       return `cancel multi-account order ${input.multi_account_order_id}`;
+    case "close_multi_account_order":
+      return `close the positions of multi-account order ${input.multi_account_order_id} on ${Array.isArray(input.account_ids) ? where : "every account"}`;
     default:
       return tool;
   }

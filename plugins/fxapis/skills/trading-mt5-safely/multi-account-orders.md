@@ -20,4 +20,4 @@
 3. Use one fresh `idempotency_key` for the whole order.
 4. It returns at once. Follow it with `get_multi_account_order` until `settled`.
 5. An account whose result is `unresolved` must not be resent. Poll its order with `get_order`.
-6. `cancel_multi_account_order` works only before release. After that, close the resulting positions one by one, with confirmation.
+6. `cancel_multi_account_order` works only before release. After that, close the resulting positions with `close_multi_account_order` once the order has settled, with confirmation. It reports each account; an `unresolved` close is never resent.

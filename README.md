@@ -81,7 +81,7 @@ To update later, run `/plugin marketplace update fxapis`.
 
 | Component | Name | What it does |
 |---|---|---|
-| MCP server | `fxapis` → `https://api.fxapis.com/mcp` | Accounts, positions, orders, deals, quotes, market hours, margin and profit calculations, and trading tools. Streamable HTTP, with OAuth sign-in or an optional API key. [Tool reference](https://docs.fxapis.com/guides/mcp#tools). |
+| MCP server | `fxapis` → `https://api.fxapis.com/mcp` | Accounts, positions, orders, deals, quotes, price history, market hours, margin and profit calculations, and trading tools; MarketLabs economic calendar, positioning, headlines and research where the plan includes it. Streamable HTTP, with OAuth sign-in or an optional API key. [Tool reference](https://docs.fxapis.com/guides/mcp#tools). |
 | Skill | [`trading-mt5-safely`](plugins/fxapis/skills/trading-mt5-safely/SKILL.md) | Demo before live; one explicit yes per trade; a fresh idempotency key per action; never resending an unresolved order; checking the market is open; sizing against free margin; reducing risk first in a drawdown. References cover the [order lifecycle](plugins/fxapis/skills/trading-mt5-safely/order-lifecycle.md), [multi-account orders](plugins/fxapis/skills/trading-mt5-safely/multi-account-orders.md) and every [error code](plugins/fxapis/skills/trading-mt5-safely/error-codes.md). |
 | Command | [`/fxapis:status`](plugins/fxapis/commands/status.md) | Your accounts in one table (label, login, server, environment, state), and what to fix for any account that needs you. Calls no tool that trades. |
 | Command | [`/fxapis:positions`](plugins/fxapis/commands/positions.md) | Open positions across every ready account, with balance, equity and P/L per account and in total per currency. Calls no tool that trades. |
@@ -95,7 +95,7 @@ To update later, run `/plugin marketplace update fxapis`.
     ├── .claude-plugin/plugin.json         # manifest and userConfig
     ├── .mcp.json                          # the fxapis MCP server
     ├── commands/                          # status, positions, connect-help
-    ├── hooks/hooks.json                   # PreToolUse matcher for the seven trade tools
+    ├── hooks/hooks.json                   # PreToolUse matcher for the eight trade tools
     ├── scripts/confirm-trade.mjs          # the confirmation hook
     └── skills/trading-mt5-safely/         # SKILL.md and its references
 ```
@@ -113,7 +113,7 @@ Several layers stand between a prompt and an order. The first two are enforced b
 
 1. **What you allowed.** A read-only connection cannot trade. A trading connection can change only the accounts you picked, within the limits you set. An API key can do only what its scopes allow.
 2. **Two-factor for trading.** Letting an app trade requires two-factor on your fxapis account.
-3. **The confirmation hook.** It runs before each of the seven trade tools: `place_market_order`, `place_pending_order`, `close_position`, `modify_position`, `cancel_order`, `place_multi_account_order` and `cancel_multi_account_order`.
+3. **The confirmation hook.** It runs before each of the eight trade tools: `place_market_order`, `place_pending_order`, `close_position`, `modify_position`, `cancel_order`, `place_multi_account_order`, `cancel_multi_account_order` and `close_multi_account_order`.
    - It always answers **ask**, so Claude Code shows a confirmation dialog even in auto-accept mode, with one line saying what will happen, for example `fxapis: buy 0.10 lots EURUSD at market on account … — demo`.
    - If fxapis has reported the account as **live** in this session, and `allowLiveTrading` is off, the trade is **denied**.
    - An account not yet listed in the session is marked "demo or live not known yet" and asked about, never assumed safe.
